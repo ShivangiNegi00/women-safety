@@ -4,7 +4,7 @@ from django.shortcuts import redirect #type:ignore
 def auth(view_function):
     def wrapeed_view(request, *args, **kwargs):
         if request.user.is_authenticated == False:
-            return redirect('login')
+            return redirect('home') # login -> home
         return view_function(request, *args, **kwargs)
     return wrapeed_view
 #********Guest***********

@@ -14,7 +14,9 @@ from .forms import ComplaintForm
 
 # Create your views here.
 def home_view(request):
-     return render(request, 'home.html')
+    if request.user.is_authenticated:
+        return redirect('dashboard')  # Redirect to dashboard if logged in
+    return render(request, 'home.html')  # Show public home page otherwise
 
 @guest
 def register_view(request):

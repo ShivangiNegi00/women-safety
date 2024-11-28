@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 ]
 
 #to use backend authentication of django
-AUTHENTICATION_BACKEND=[
+AUTHENTICATION_BACKENDS=[
     'django.contrib.auth.backends.ModelBackend'
 ]
 
@@ -139,3 +139,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your_email@gmail.com'
 EMAIL_HOST_PASSWORD = 'your_email_password'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
